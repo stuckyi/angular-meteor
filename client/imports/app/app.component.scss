@@ -1,0 +1,191 @@
+@charset "UTF-8";
+
+/* typo */
+
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+html:lang(ko) {
+  font-size: 17px;
+} //default font size
+$fontSize0: 100%; //body
+$fontSize1: 300%; //h1
+$fontSize2: 200%; //h2
+$fontSize3: 120%; //h3, blockquote, .history_box > .title
+$fontSize4: 110%; //h4
+$fontSize5: 90%; //instruction
+$fontSize6: 80%; //.value_index, .value_data
+$lineHeight0: 1.7647058824rem; //default, .side_bar
+$lineHeight1: 2rem; //blockquote
+$lineHeight2: 1.5rem; //.value_index, .value_data
+$font-sans: 'Noto Sans KR',
+sans-serif; //default font-family
+$font-serif: 'Nanum Myeongjo',
+serif;
+
+
+/* color */
+
+$main-color: aquamarine;
+$main-color-light: #92FFFC;
+$main-color-dark: #00C4C4;
+$sub-color: violet; //no fixed
+$point-color: orange; //no fixed
+$bg-color: #efefef;
+$fontCol-black: black;
+$fontCol-white: white;
+$fontCol-blockquote: darkgray;
+$fontCol-aquamarine: #22B2A1;
+$bgCol-intro: $main-color;
+$bgCol-instruction: $bg-color;
+
+/* material gray colorvariation */
+$Gray50:  #fafafa;
+$Gray100: #f5f5f5;
+$Gray200: #eeeeee;
+$Gray300: #e0e0e0;
+$Gray400: #bdbdbd;
+$Gray500: #9e9e9e;
+$Gray600: #757575;
+$Gray700: #616161;
+$Gray800: #424242;
+$Gray900: #212121;
+
+/* mixin */
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin min-size($min-width, $min-height) {
+  min-width: $min-width;
+  min-height: $min-height;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin flex($display, $flex-flow) {
+  display: $display;
+  flex-flow: $flex-flow;
+}
+
+
+
+/*
+@include border-radius(5px);
+
+// Single side border-radius
+@include border-top-radius(10px);
+@include border-right-radius(8px);
+@include border-bottom-radius(10px);
+@include border-left-radius (6px);
+*/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+     border-top-right-radius: $radius;
+     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+     border-top-left-radius: $radius;
+     background-clip: padding-box;
+}
+
+app {
+
+}
+
+body{
+        font-family: $font-sans;
+        font-weight:100;
+        letter-spacing:-1px;
+        color:$Gray800;
+}
+
+#wrap{
+        @include flex(flex, column nowrap);
+        width:960px;
+        height:600px;
+        border: 2px solid mediumpurple;
+
+        button {
+                
+                color:white;
+                border:none;
+                
+        }
+        
+        .partiesForm{
+                label { 
+                        font-weight:400;
+                        padding-left:8px;
+                }
+                input { 
+                        background-color:$Gray200;
+                        border:none;
+                        border-radius:2px;
+                }
+
+
+        }
+        .partiesDetail{
+                @include flex(flex, column nowrap);
+                margin-top:3%;
+                
+                .partiesContainer{
+                        margin-top:3%;
+                        @include size(40%, auto);
+                        
+                        // background-color:$Gray100;
+                        .partyIndex:nth-of-type(odd){ background-color:$Gray200;}
+                        .partyIndex {
+                                
+                                @include size(100%, auto);
+                                margin-top:4px;
+                                span {
+                                        font-weight:400;
+                                        margin: 0 2%;
+                                }
+                                
+                        }
+
+                        
+
+                }
+                
+        }
+}
+

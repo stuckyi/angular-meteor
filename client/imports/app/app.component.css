@@ -1,0 +1,60 @@
+/* typo */
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+html:lang(ko) {
+  font-size: 17px; }
+
+/* color */
+/* material gray colorvariation */
+/* mixin */
+/*
+@include border-radius(5px);
+
+// Single side border-radius
+@include border-top-radius(10px);
+@include border-right-radius(8px);
+@include border-bottom-radius(10px);
+@include border-left-radius (6px);
+*/
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 100;
+  letter-spacing: -1px;
+  color: #424242; }
+
+#wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 960px;
+  height: 600px;
+  border: 2px solid mediumpurple; }
+  #wrap button {
+    color: white;
+    border: none; }
+  #wrap .partiesForm label {
+    font-weight: 400;
+    padding-left: 8px; }
+  #wrap .partiesForm input {
+    background-color: #eeeeee;
+    border: none;
+    border-radius: 2px; }
+  #wrap .partiesDetail {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 3%; }
+    #wrap .partiesDetail .partiesContainer {
+      margin-top: 3%;
+      width: 40%;
+      height: auto; }
+      #wrap .partiesDetail .partiesContainer .partyIndex:nth-of-type(odd) {
+        background-color: #eeeeee; }
+      #wrap .partiesDetail .partiesContainer .partyIndex {
+        width: 100%;
+        height: auto;
+        margin-top: 4px; }
+        #wrap .partiesDetail .partiesContainer .partyIndex span {
+          font-weight: 400;
+          margin: 0 2%; }
+
+/*# sourceMappingURL=app.component.css.map */

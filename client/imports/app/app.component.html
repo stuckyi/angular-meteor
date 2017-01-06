@@ -1,0 +1,15 @@
+<div id="wrap">
+  <div class="partiesForm">
+    <parties-form></parties-form>
+  </div>
+  
+  <div class="partiesDetail">
+    <div class="partiesContainer" *ngFor="let party of parties | async">
+      <div class="partyIndex"> <span> 행사 이름: {{party.name}}</span> </div>
+      <div class="partyIndex"> <span> 행사 내용: {{party.description}}</span> </div>
+      <div class="partyIndex"> <span>행사 위치:  {{party.location}}</span></div>
+      <button (click)="removeParty(party)"><i class="material-icons">delete_forever</i></button>
+    </div>
+  </div>
+  
+</div>
